@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Header from './components/header/Header'
+import Home from './components/main/Home'
+import Curriculo from './components/main/Curriculo'
+import Contato from './components/main/Contato'
+import SobreSite from './components/main/SobreSite'
+import {useSelector} from 'react-redux'
 
 function App() {
+
+  const componentSettings = useSelector(state => state.componentConfig)
+
+  console.log(componentSettings);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header />
+      {componentSettings.home && <Home />}
+      {componentSettings.curriculo && <Curriculo />}
+      {componentSettings.contato && <Contato />}
+      {componentSettings.sobreSite && <SobreSite />}
+    </React.Fragment>
   );
 }
 

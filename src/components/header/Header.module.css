@@ -1,0 +1,67 @@
+/* GENERAL CONFIGURATION HEADER */
+header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+header.lightMode {
+  background-color: aliceblue;
+}
+
+div.darkMode {
+  background-color: rgba(0, 0, 0, 0.815);
+}
+
+.title {
+  margin: auto;
+  color: #3b5998;
+}
+
+.lightMode {
+  background-color: white;
+}
+
+/* NAVEGATION BAR CONFIGURATION*/
+ul.lightMode li {
+  color: black;
+  border-bottom: 2px solid white;
+}
+
+ul.lightMode li:hover {
+  border-bottom: 2px solid #3b5998;
+  color: #3b5998;
+}
+
+ul.darkMode li {
+  color: rgba(255, 255, 255, 0.685);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+ul.darkMode li:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.685);
+}
+
+/* BUTTON CONFIGURATION */
+button.lightMode {
+  border: 1px solid black;
+  background-color: white;
+}
+
+button.lightMode:hover {
+  background-color: rgba(128, 128, 128, 0.616);
+  color: aliceblue;
+  border: 1px solid;
+}
+
+button.darkMode{
+    color: white;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button.darkMode:hover{
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+}

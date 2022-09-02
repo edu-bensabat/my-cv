@@ -1,0 +1,15 @@
+.nav{
+    display: flex;
+    margin: auto;
+    list-style: none;
+    size: 10%;
+}
+
+.nav li{
+    margin: auto 1.5rem;
+    font-size: 120%;
+}
+
+.nav li:hover{
+    cursor: pointer;
+}
