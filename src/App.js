@@ -17,27 +17,30 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
 
-        <Route path="/curriculo">
-          <Curriculo />
-        </Route>
+      <main>
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
 
-        <Route path="/sobre-site">
-          <SobreSite />
-        </Route>
+          <Route path="/curriculo">
+            <Curriculo />
+          </Route>
 
-        <Route path="/contato">
-          <Contato />
-        </Route>
+          <Route path="/sobre-site">
+            <SobreSite />
+          </Route>
 
-        <Route path="portfolio">
-          <Portfolio />
-        </Route>
-      </Switch>
+          <Route path="/contato">
+            <Contato />
+          </Route>
+
+          <Route path="/portfolio">
+            <Portfolio />
+          </Route>
+        </Switch>
+      </main>
     </React.Fragment>
   );
 }

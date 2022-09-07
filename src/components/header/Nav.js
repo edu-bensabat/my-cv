@@ -1,37 +1,25 @@
-import { componentConfigActions } from "../../store/ComponentConfig";
 import classes from "./Nav.module.css";
-import { useDispatch} from "react-redux/es/exports";
+import { NavLink } from "react-router-dom";
 
 const Nav = (props) => {
-  const dispatch = useDispatch();
-
-  const closePages = () => {
-    dispatch(componentConfigActions.closeComponents());
-  };
-
-  const openHome = () => {
-    closePages();
-    dispatch(componentConfigActions.openHome());
-  };
-  const openCurriculo = () => {
-    closePages();
-    dispatch(componentConfigActions.openCurriculo());
-  };
-  const openContato = () => {
-    closePages();
-    dispatch(componentConfigActions.openContato());
-  };
-  const openSobreSite = () => {
-    closePages();
-    dispatch(componentConfigActions.openSobreSite());
-  };
-
   return (
     <ul className={`${classes.nav} ${props.mode}`}>
-      <li onClick={openHome}>Home</li>
-      <li onClick={openCurriculo}>Curriculo</li>
-      <li onClick={openContato}>Contato</li>
-      <li onClick={openSobreSite}>Sobre o site</li>
+      <li>
+        <NavLink activeClassName={classes.active} to="/home">Home</NavLink>
+      </li>
+
+      <li>
+        <NavLink activeClassName={classes.active} to="/curriculo">Curriculo</NavLink>
+      </li>
+      <li>
+        <NavLink activeClassName={classes.active} to="/contato">Contato</NavLink>
+      </li>
+      <li>
+        <NavLink activeClassName={classes.active} to="/sobre-site">Sobre o site</NavLink>
+      </li>
+      <li>
+        <NavLink activeClassName={classes.active} to="/portfolio">Portfolio</NavLink>
+      </li>
     </ul>
   );
 };
