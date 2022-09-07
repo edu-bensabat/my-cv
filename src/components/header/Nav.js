@@ -5,20 +5,30 @@ const Nav = (props) => {
   return (
     <ul className={`${classes.nav} ${props.mode}`}>
       <li>
-        <NavLink activeClassName={classes.active} to="/home">Home</NavLink>
+        <NavLink activeClassName={classes.active} to="/home">
+          Home
+        </NavLink>
       </li>
 
       <li>
-        <NavLink activeClassName={classes.active} to="/curriculo">Curriculo</NavLink>
+        <NavLink activeClassName={classes.active} to="/curriculo">
+          Curriculo
+        </NavLink>
       </li>
       <li>
-        <NavLink activeClassName={classes.active} to="/contato">Contato</NavLink>
+        <NavLink activeClassName={classes.active} to="/contato">
+          Contato
+        </NavLink>
       </li>
       <li>
-        <NavLink activeClassName={classes.active} to="/sobre-site">Sobre o site</NavLink>
+        <NavLink activeClassName={classes.active} to="/sobre-site">
+          Sobre o site
+        </NavLink>
       </li>
       <li>
-        <NavLink activeClassName={classes.active} to="/portfolio">Portfolio</NavLink>
+        <NavLink activeClassName={classes.active} to="/portfolio">
+          Portfolio
+        </NavLink>
       </li>
     </ul>
   );
