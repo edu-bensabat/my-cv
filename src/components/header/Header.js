@@ -8,8 +8,6 @@ const Header = () => {
 
   const modeHandler = () => {
 
-    console.log(mode);
-
     if (mode === classes.lightMode) return setMode(classes.darkMode);
 
     if (mode === classes.darkMode) return setMode(classes.lightMode);
