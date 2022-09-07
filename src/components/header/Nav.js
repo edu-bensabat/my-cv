@@ -1,9 +1,12 @@
 import classes from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Nav = (props) => {
+const Nav = () => {
+  const mode = useSelector((state) => state.mode.mode);
+
   return (
-    <ul className={`${classes.nav} ${props.mode}`}>
+    <ul className={`${classes.nav} ${mode}`}>
       <li>
         <NavLink activeClassName={classes.active} to="/home">
           Home

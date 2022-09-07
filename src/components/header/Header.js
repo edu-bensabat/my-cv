@@ -1,26 +1,29 @@
 import Nav from "./Nav";
 import classes from "./Header.module.css";
 import But from "./Button";
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { modeActions } from "../../store/mode";
 
 const Header = () => {
-  const [mode, setMode] = useState(classes.lightMode);
+  const dispatch = useDispatch();
+  const mode = useSelector((state) => state.mode.mode);
 
   const modeHandler = () => {
-    if (mode === classes.lightMode) return setMode(classes.darkMode);
+    if (mode === "darkMode") return dispatch(modeActions.toLight());
 
-    if (mode === classes.darkMode) return setMode(classes.lightMode);
+    if (mode === "lightMode") return dispatch(modeActions.toDark());
   };
 
   return (
     <React.Fragment>
-      <div className={`header darkMode`}>
+      <div className={`header ${mode}`}>
         <header>
           <h1 className={classes.title}>MyCurriculum.js</h1>
 
-          <Nav mode={"darkMode"}></Nav>
+          <Nav></Nav>
 
-          <But mode={"darkMode"} changeModeHandler={modeHandler}></But>
+          <But changeModeHandler={modeHandler}></But>
         </header>
 
         <hr></hr>
