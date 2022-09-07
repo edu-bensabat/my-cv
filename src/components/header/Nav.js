@@ -8,28 +8,43 @@ const Nav = () => {
   return (
     <ul className={`${classes.nav} ${mode}`}>
       <li>
-        <NavLink activeClassName={classes.active} to="/home">
+        <NavLink
+          className={(navData) => (navData.isActive ? classes.active : "")}
+          to="/home"
+        >
           Home
         </NavLink>
       </li>
 
       <li>
-        <NavLink activeClassName={classes.active} to="/curriculo">
+        <NavLink
+          className={(navData) => (navData.isActive ? classes.active : "")}
+          to="/curriculo"
+        >
           Curriculo
         </NavLink>
       </li>
       <li>
-        <NavLink activeClassName={classes.active} to="/contato">
+        <NavLink
+          className={(navData) => (navData.isActive ? classes.active : "")}
+          to="/contato"
+        >
           Contato
         </NavLink>
       </li>
       <li>
-        <NavLink activeClassName={classes.active} to="/sobre-site">
+        <NavLink
+          className={(navData) => (navData.isActive ? classes.active : "")}
+          to="/sobre-site"
+        >
           Sobre o site
         </NavLink>
       </li>
       <li>
-        <NavLink activeClassName={classes.active} to="/portfolio">
+        <NavLink
+          className={(navData) => (navData.isActive ? classes.active : "")}
+          to="/portfolio"
+        >
           Portfolio
         </NavLink>
       </li>
