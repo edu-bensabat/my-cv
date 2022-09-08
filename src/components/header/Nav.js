@@ -35,14 +35,6 @@ const Nav = () => {
       <li>
         <NavLink
           className={(navData) => (navData.isActive ? classes.active : "")}
-          to="/sobre-site"
-        >
-          Sobre o site
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={(navData) => (navData.isActive ? classes.active : "")}
           to="/portfolio"
         >
           Portfolio
