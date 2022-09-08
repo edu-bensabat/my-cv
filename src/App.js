@@ -1,10 +1,6 @@
 import "./App.css";
 import React, { Suspense } from "react";
 import Header from "./components/header/Header";
-/* import Home from "./pages/Home";
-import Curriculo from "./pages/Curriculo";
-import Contato from "./pages/Contato";
-import Portfolio from "./pages/Portfolio"; */
 import { Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 
