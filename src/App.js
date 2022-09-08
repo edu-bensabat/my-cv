@@ -1,28 +1,34 @@
 import "./App.css";
-import React from "react";
+import React, { Suspense } from "react";
 import Header from "./components/header/Header";
-import Home from "./components/pages/Home";
-import Curriculo from "./components/pages/Curriculo";
-import Contato from "./components/pages/Contato";
-import SobreSite from "./components/pages/SobreSite";
-import Portfolio from "./components/pages/Portfolio";
+/* import Home from "./pages/Home";
+import Curriculo from "./pages/Curriculo";
+import Contato from "./pages/Contato";
+import Portfolio from "./pages/Portfolio"; */
 import { Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+
+const Home = React.lazy(() => import("./pages/Home"));
+const Curriculo = React.lazy(() => import("./pages/Curriculo"));
+const Contato = React.lazy(() => import("./pages/Contato"));
+const Portfolio = React.lazy(() => import("./pages/Portfolio"));
 
 function App() {
   return (
     <React.Fragment>
       <Header />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/curriculo" element={<Curriculo />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-        </Routes>
-      </main>
+      <Suspense fallback={<p className="centered">Carregando página</p>}>
+        <main>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/curriculo" element={<Curriculo />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+          </Routes>
+        </main>
+      </Suspense>
     </React.Fragment>
   );
 }

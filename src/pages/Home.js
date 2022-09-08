@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Presentation from "../main/Presentation";
+import Presentation from "../components/main/Presentation";
 
 const Home = () => {
   const [data, setData] = useState();
