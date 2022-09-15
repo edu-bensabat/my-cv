@@ -1,0 +1,7 @@
+/* GENERAL CONFIGURATION HEADER */
+header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}

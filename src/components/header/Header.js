@@ -1,5 +1,6 @@
 import Nav from "./Nav";
-import React from "react";
+import classes from "./Header.module.css";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { modeActions } from "../../store/mode";
 
@@ -15,12 +16,6 @@ const Header = () => {
   window.onresize = widthSize;
 
   const tail = useSelector((state) => state.mode.grid);
-
-  const modeHandler = () => {
-    if (mode === "darkMode") return dispatch(modeActions.toLight());
-
-    if (mode === "lightMode") return dispatch(modeActions.toDark());
-  };
 
   const hideHandler = () => {
     if (hide === "") return dispatch(modeActions.toHidden());
