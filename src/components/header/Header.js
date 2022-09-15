@@ -1,6 +1,11 @@
 import Nav from "./Nav";
+<<<<<<< HEAD
 import classes from "./Header.module.css";
 import React, { useEffect } from "react";
+=======
+import But from "./Button";
+import React from "react";
+>>>>>>> bba85ad4ad64b7361ab3fd50d600b36cde9acfa6
 import { useDispatch, useSelector } from "react-redux";
 import { modeActions } from "../../store/mode";
 
@@ -8,6 +13,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.mode.mode);
   const hide = useSelector((state) => state.mode.hide);
+<<<<<<< HEAD
+=======
 
   const widthSize = () => {
     window.innerWidth >= 768 && dispatch(modeActions.offHidden());
@@ -16,6 +23,21 @@ const Header = () => {
   window.onresize = widthSize;
 
   const tail = useSelector((state) => state.mode.grid);
+>>>>>>> bba85ad4ad64b7361ab3fd50d600b36cde9acfa6
+
+  const widthSize = () => {
+    window.innerWidth >= 768 && dispatch(modeActions.offHidden());
+    window.innerWidth <= 768 && dispatch(modeActions.toHidden());
+  };
+  window.onresize = widthSize;
+
+  const tail = useSelector((state) => state.mode.grid);
+
+  const hideHandler = () => {
+    if (hide === "") return dispatch(modeActions.toHidden());
+
+    if (hide === "hidden") return dispatch(modeActions.offHidden());
+  };
 
   const hideHandler = () => {
     if (hide === "") return dispatch(modeActions.toHidden());
