@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { mode: "lightMode" };
+const initialState = {
+  mode: "lightMode",
+  hide: "",
+  grid: "",
+  scrolling: "",
+  header: {colH1: '3', divHeader: 'justify-end'}
+};
 
 const modeSlice = createSlice({
   name: "mode",
@@ -14,8 +20,14 @@ const modeSlice = createSlice({
       state.mode = "darkMode";
     },
 
-    abc() {
-      console.log("abc");
+    toHidden(state) {
+      state.hide = "hidden";
+      state.grid = "";
+    },
+
+    offHidden(state) {
+      state.hide = "";
+      state.grid = "grid grid-cols-5";
     },
   },
 });

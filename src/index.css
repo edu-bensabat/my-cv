@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Header.js */
+.navRelative{
+    @apply relative col-span-1;
+  }
+  
+  .navAbsolute{
+    @apply bg-gray-600 absolute pl-8 pr-16 border rounded-l-2xl h-screen
+  }
+  
+  .header{
+    @apply col-span-4 border-b-2 grid border-gray-300
+  }
+  
+  .h1Header{
+    @apply text-base px-3 font-semibold text-blue-800
+  }
+  
+  /* Nav.js */
+  .ulNav{
+    @apply flex flex-col my-12
+  }
